@@ -34,7 +34,7 @@ body {
     margin-bottom: 0px;
 }
 
-#input-el[type=text] {
+#input-el {
     width: 117px;
     height: 83px;
 
@@ -131,4 +131,6 @@ body {
     border-radius: 5px;
 
     margin-bottom: 34px;
+
+    cursor: pointer;
 }
