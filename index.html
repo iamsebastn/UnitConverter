@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Converter</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="page-wrapper">
+            <div id="main-content">
+                <div id="converter-head">
+                    <div id="head-wrapper">
+                        <h1 id="title">Metric/Imperial Unit Conversion</h1>
+                    </div>
+                    <input id="input-el" type=text placeholder="0" maxlength="3">
+                    <button id="convert-btn">Convert</button>
+                </div>
+                <div id="converter-parent">
+                    <div class="conv-item">
+                        <div class="unit-title">
+                            <h2 class="unit-head">Length (Meter/Feet)</h2>
+                        </div>
+                        <p class="unit-txt">20meters = 65.325 feet | 20 feet = 6.069 meters</p>
+                    </div>
+                    <div class="conv-item mid">
+                        <div class="unit-title">
+                            <h2 class="unit-head">Volume (Liters/Gallons)</h2>
+                        </div>
+                        <p class="unit-txt">20 liters = 5.284 gallons | 20 gallons = 75.708 liters</p>
+                    </div>
+                    <div class="conv-item">
+                        <div class="unit-title">
+                            <h2 class="unit-head">Mass (Kilograms/Pounds)</h2>
+                        </div>
+                        <p class="unit-txt">20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
