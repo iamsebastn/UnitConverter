@@ -1,8 +1,3 @@
-/*
-1 meter = 3.281 feet
-1 liter = 0.264 gallon
-1 kilogram = 2.204 pound
-*/
 const conversions = {
     meter: 3.281,
     liter: 0.264,
@@ -11,27 +6,47 @@ const conversions = {
 
 const convertBtn = document.getElementById("convert-btn")
 const inputEl = document.getElementById("input-el")
+const lengthTxt = document.getElementById("length-txt")
+const volumeTxt = document.getElementById("volume-txt")
+const massTxt = document.getElementById("mass-txt")
 
 convertBtn.addEventListener("click", function() {
-    convertLength()
-    convertVolume()
-    convertMass()
-
-    console.log(inputEl.value + " times Hello")
+    if (inputEl.value !== "") {
+        convertLength(inputEl.value)
+        convertVolume(inputEl.value)
+        convertMass(inputEl.value)
+    } else {
+        return alert("Please input a value")
+    }
 })
 
 
-function convertLength() {
-    let output = (inputEl.value) * 3.281
-    console.log("Your unit is around " + output + " feet")
+function convertLength(value) {
+    let outputFeet = (value) * conversions.meter
+    let outputMeter = (value) / conversions.meter
+
+    lengthTxt.textContent = `
+        ${value} meters = ${outputFeet.toFixed(3)} feet | 
+        ${value} feet = ${outputMeter.toFixed(3)} meters
+        ` 
 }
 
-function convertVolume() {
-    let output = (inputEl.value) * 0.264
-    console.log("Your unit is around " + output + " gallons")
+function convertVolume(value) {
+    let outputGallons = (value) * conversions.liter
+    let outputLiter = (value) / conversions.liter
+
+    volumeTxt.textContent = `
+        ${value} liters = ${outputGallons.toFixed(3)} gallons | 
+        ${value} gallons = ${outputLiter.toFixed(3)} liters
+        ` 
 }
 
-function convertMass() {
-    let output = (inputEl.value) * 2.204
-    console.log("Your unit is around " + output + " pounds")
+function convertMass(value) {
+    let outputPounds = (value) * 2.204
+    let outputKilo = (value) * 2.204
+
+    massTxt.textContent = `
+        ${value} kilos = ${outputPounds.toFixed(3)} pounds | 
+        ${value} pounds = ${outputKilo.toFixed(3)} kilos
+        ` 
 }
